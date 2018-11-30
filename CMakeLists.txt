@@ -17,6 +17,18 @@ endif()
 
 add_executable(parallelraytracing
   src/main.cpp
+  src/frameBuffer.cpp
+  src/frameBuffer.h
+  src/geometry.cpp
+  src/geometry.h
+  src/object.cpp
+  src/object.h
+  src/camera.cpp
+  src/camera.h
+  src/rayTracer.cpp
+  src/rayTracer.h
+  src/screen.cpp
+  src/screen.h
 )
 
 if(MSVC)
