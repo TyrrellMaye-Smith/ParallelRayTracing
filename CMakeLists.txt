@@ -16,19 +16,17 @@ if(MSVC)
 endif()
 
 add_executable(parallelraytracing
-  src/main.cpp
-  src/frameBuffer.cpp
-  src/frameBuffer.h
-  src/geometry.cpp
-  src/geometry.h
-  src/object.cpp
-  src/object.h
-  src/camera.cpp
-  src/camera.h
-  src/rayTracer.cpp
-  src/rayTracer.h
-  src/screen.cpp
-  src/screen.h
+  src/Main.cpp
+  src/FrameBuffer.cpp
+  src/FrameBuffer.h
+  src/Geometry.cpp
+  src/Geometry.h
+  src/Object.cpp
+  src/Object.h
+  src/Camera.cpp
+  src/Camera.h
+  src/RayTracer.cpp
+  src/RayTracer.h
 )
 
 if(MSVC)
