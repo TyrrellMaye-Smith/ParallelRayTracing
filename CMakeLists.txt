@@ -4,6 +4,7 @@ project(PARALLELRAYTRACING)
 if(MSVC)
   include_directories(
     contrib/msvc-windows-x86/SDL2/include
+		contrib
   )
 
   link_directories(

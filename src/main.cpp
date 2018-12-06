@@ -1,6 +1,9 @@
 #include <iostream>
+#include <cmath>
+#include <SDL2/SDL.h>
 
 #include "Screen.h"
+
 
 int main()
 {
@@ -31,7 +34,21 @@ int main()
 			SDL_RenderClear(m_renderer);
 		}
 
+		//SetBackground(0, 0, 0);
+
 		SDL_DestroyWindow(m_window);
 		SDL_DestroyRenderer(m_renderer);
 		return 0;
 }
+
+//void SetBackground(int _red, int _green, int _blue)
+//{
+//		SDL_SetRenderDrawColor(m_renderer, _red, _green, _blue, 225);		//Set the colour for drawing
+//		SDL_RenderClear(m_renderer);		//Clears the screen to the selected colour
+//}
+//
+//void DrawPixel(int _pixelX, int _pixelY, int _red, int _green, int _blue)
+//{
+//		SDL_SetRenderDrawColor(m_renderer, _red, _green, _blue, 225);
+//		SDL_RenderDrawPoint(m_renderer, _pixelX, _pixelY);
+//}
