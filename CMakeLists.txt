@@ -28,9 +28,9 @@ add_executable(parallelraytracing
   src/Camera.h
   src/RayTracer.cpp
   src/RayTracer.h
-	src/Ray.h
-	src/Sphere.h
-	src/Sphere.cpp
+  src/Ray.h
+  src/Sphere.h
+  src/Sphere.cpp
 )
 
 if(MSVC)

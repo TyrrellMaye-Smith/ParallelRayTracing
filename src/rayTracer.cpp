@@ -1,6 +1,6 @@
 #include "RayTracer.h"
 
-glm::vec3 RayTracer::rayTracer(std::shared_ptr<Ray> _ray)
+glm::vec3 RayTracer::Raytracer(std::shared_ptr<Ray> _ray)
 {
 		glm::vec3 colour = glm::vec3(0, 0, 0);
 
@@ -8,11 +8,12 @@ glm::vec3 RayTracer::rayTracer(std::shared_ptr<Ray> _ray)
 		{
 				if (m_geomerty->Intersect(_ray, m_objects.at(i)->GetPos(), m_objects.at(i)->GetRadius()))
 				{
-						colour = glm::vec3(1, 0, 0);
+						colour = m_objects.at(i)->GetColor();
+						break;
 				}
 				else
 				{
-						colour = glm::vec3(0, 1, 0);
+						colour = glm::vec3(0, 0, 0);
 				}
 		}
 

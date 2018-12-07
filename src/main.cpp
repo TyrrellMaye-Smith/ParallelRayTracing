@@ -32,20 +32,38 @@ int main()
 		std::shared_ptr<RayTracer> rayTracer;
 		rayTracer = std::make_shared<RayTracer>();
 
-		std::shared_ptr<Sphere> sphere;
-		sphere = std::make_shared<Sphere>();
-		sphere->SetPos(glm::vec3(m_winWidth / 2, m_winHeight / 2, -100.0f));
-		sphere->SetColor(glm::vec3(1, 0, 0));
-		sphere->SetRadius(50.0f);
+		//Red Sphere
+		std::shared_ptr<Sphere> redSphere;
+		redSphere = std::make_shared<Sphere>();
+		redSphere->SetPos(glm::vec3(m_winWidth / 2, m_winHeight / 4, -1.0f));
+		redSphere->SetColor(glm::vec3(1, 0, 0));
+		redSphere->SetRadius(50.0f);
+		
+		//Green Sphere
+		std::shared_ptr<Sphere> greenSphere;
+		greenSphere = std::make_shared<Sphere>();
+		greenSphere->SetPos(glm::vec3(m_winWidth / 4, m_winHeight / 1.5f, -1.0f));
+		greenSphere->SetColor(glm::vec3(0, 1, 0));
+		greenSphere->SetRadius(50.0f);
 
-		rayTracer->AddObject(sphere);
+		//Blue Sphere
+		std::shared_ptr<Sphere> blueSphere;
+		blueSphere = std::make_shared<Sphere>();
+		blueSphere->SetPos(glm::vec3(m_winWidth / 1.35f, m_winHeight / 1.5f, -1.0f));
+		blueSphere->SetColor(glm::vec3(0, 0, 1));
+		blueSphere->SetRadius(50.0f);
+
+		rayTracer->AddObject(redSphere);
+		rayTracer->AddObject(greenSphere);
+		rayTracer->AddObject(blueSphere);
 
 		for (int i = 0; i < m_winWidth; i++)
 		{
 				for (int j = 0; j < m_winHeight; j++)
 				{
 						std::shared_ptr<Ray> ray = camera->RayCreation(glm::ivec2 (i,j));
-						glm::vec3 color = (rayTracer->rayTracer(ray)* 255.0f);
+						//glm::vec3 pi = ray->m_origin + ray->m_direction * 
+						glm::vec3 color = (rayTracer->Raytracer(ray)* 255.0f);
 						SDL_SetRenderDrawColor(m_renderer, color.x, color.y, color.z, 255);
 						SDL_RenderDrawPoint(m_renderer, i, j);
 				}
@@ -65,21 +83,8 @@ int main()
 			SDL_RenderPresent(m_renderer);
 		}
 
-		//SetBackground(0, 0, 0);
 
 		SDL_DestroyWindow(m_window);
 		SDL_DestroyRenderer(m_renderer);
 		return 0;
 }
-
-//void SetBackground(int _red, int _green, int _blue)
-//{
-//		SDL_SetRenderDrawColor(m_renderer, _red, _green, _blue, 225);		//Set the colour for drawing
-//		SDL_RenderClear(m_renderer);		//Clears the screen to the selected colour
-//}
-//
-//void DrawPixel(int _pixelX, int _pixelY, int _red, int _green, int _blue)
-//{
-//		SDL_SetRenderDrawColor(m_renderer, _red, _green, _blue, 225);
-//		SDL_RenderDrawPoint(m_renderer, _pixelX, _pixelY);
-//}
