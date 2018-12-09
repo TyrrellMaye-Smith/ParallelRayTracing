@@ -54,15 +54,14 @@ int main()
 		blueSphere->SetRadius(50.0f);
 
 		rayTracer->AddObject(redSphere);
-		rayTracer->AddObject(greenSphere);
-		rayTracer->AddObject(blueSphere);
+		//rayTracer->AddObject(greenSphere);
+		//rayTracer->AddObject(blueSphere);
 
 		for (int i = 0; i < m_winWidth; i++)
 		{
 				for (int j = 0; j < m_winHeight; j++)
 				{
 						std::shared_ptr<Ray> ray = camera->RayCreation(glm::ivec2 (i,j));
-						//glm::vec3 pi = ray->m_origin + ray->m_direction * 
 						glm::vec3 color = (rayTracer->Raytracer(ray)* 255.0f);
 						SDL_SetRenderDrawColor(m_renderer, color.x, color.y, color.z, 255);
 						SDL_RenderDrawPoint(m_renderer, i, j);
