@@ -55,8 +55,8 @@ int main()
 		blueSphere->SetRadius(50.0f);
 
 		rayTracer->AddObject(redSphere);
-		//rayTracer->AddObject(greenSphere);
-		//rayTracer->AddObject(blueSphere);
+		rayTracer->AddObject(greenSphere);
+		rayTracer->AddObject(blueSphere);
 
 		for (int i = 0; i < m_winWidth; i++)
 		{

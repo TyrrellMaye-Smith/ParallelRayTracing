@@ -2,16 +2,17 @@
 
 glm::vec3 Sphere::Shade(std::shared_ptr<Ray> _ray, glm::vec3 _intersect)
 {
-		//glm::vec3 pi = _ray->m_origin + _ray->m_direction * t;
-		glm::vec3 color = glm::vec3(0, 0, 0);
-		glm::vec3 lightDirection = { 0, 0, 1 };
+		
+
+		glm::vec3 color = GetColor();
+		glm::vec3 lightDirection = { 0.0f, 0.0f, 1.0f };
 		glm::vec3 surfaceNormal;
-		glm::vec3 lightColor = { 1, 1, 1 };
+		glm::vec3 lightColor = { 1.0f, 1.0f, 1.0f };
 
 		lightDirection = glm::normalize(lightDirection);
 		surfaceNormal = glm::normalize(_intersect - m_pos);
 		float dot = glm::dot(lightDirection, surfaceNormal);
-		glm::vec3 diffuseColor { 0 };
+		glm::vec3 diffuseColor { 0.0f };
 
 		if (dot > 0)
 		{
