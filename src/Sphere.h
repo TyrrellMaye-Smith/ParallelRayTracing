@@ -9,7 +9,7 @@
 class Sphere
 {
 public:
-		glm::vec3 Shade(std::shared_ptr<Ray> _ray, glm::vec3(_intersect));
+		glm::vec3 Shade(std::shared_ptr<Ray> _ray, glm::vec3 _intersect);
 
 		void SetPos(glm::vec3 _pos);
 		void SetRadius(float _radius);
@@ -19,6 +19,9 @@ public:
 		glm::vec3 GetColor();
 
 		float GetRadius();
+
+		glm::vec3 GetNormal(glm::vec3 _pi);
+		//glm::vec3 GetNormal(glm::vec3 _center, glm::vec3 _point);
 
 private:
 		glm::vec3 m_pos;

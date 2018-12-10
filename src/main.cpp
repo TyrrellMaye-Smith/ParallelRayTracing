@@ -43,6 +43,7 @@ int main()
 		std::shared_ptr<Sphere> greenSphere;
 		greenSphere = std::make_shared<Sphere>();
 		greenSphere->SetPos(glm::vec3(m_winWidth / 4, m_winHeight / 1.5f, -1.0f));
+		//greenSphere->SetPos(glm::vec3(m_winWidth / 2, m_winHeight / 3, -1.0f));
 		greenSphere->SetColor(glm::vec3(0, 1, 0));
 		greenSphere->SetRadius(50.0f);
 
