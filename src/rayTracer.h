@@ -12,7 +12,7 @@
 class RayTracer
 {
 public:
-		glm::vec3 Raytracer(std::shared_ptr<Ray> _ray);
+		glm::vec3 Raytracer(std::shared_ptr<Ray> _ray, int a);
 
 		void AddObject(std::shared_ptr<Sphere> _object);
 

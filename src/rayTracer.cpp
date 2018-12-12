@@ -1,6 +1,6 @@
 #include "RayTracer.h"
 
-glm::vec3 RayTracer::Raytracer(std::shared_ptr<Ray> _ray)
+glm::vec3 RayTracer::Raytracer(std::shared_ptr<Ray> _ray, int a)
 {
 		glm::vec3 color = glm::vec3(0, 0, 0);
 		std::shared_ptr<Sphere> closestObject = nullptr;
@@ -19,8 +19,7 @@ glm::vec3 RayTracer::Raytracer(std::shared_ptr<Ray> _ray)
 								closestObject = m_objects.at(i);
 								intersectionPoint = result.intersectionPoint;
 						}
-						//color = m_objects.at(i)->GetColor();
-						break;
+						break;	//See if that works when deleted
 				}
 				else
 				{
@@ -30,7 +29,7 @@ glm::vec3 RayTracer::Raytracer(std::shared_ptr<Ray> _ray)
 
 		if (closestObject != nullptr)
 		{
-				color = closestObject->Shade(_ray, intersectionPoint);
+				color = closestObject->Shade(_ray, *this, intersectionPoint, a);
 		}
 
 		return color;
