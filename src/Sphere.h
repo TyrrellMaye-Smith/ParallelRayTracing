@@ -4,9 +4,10 @@
 #include <glm/glm.hpp>
 #include <memory>
 
-
 #include "Ray.h"
 #include "rayTracer.h"
+
+class RayTracer;
 
 class Sphere
 {
@@ -23,8 +24,6 @@ public:
 		float GetRadius();
 
 		glm::vec3 GetNormal(glm::vec3 _pi);
-		//glm::vec3 Reflections(std::shared_ptr<RayTracer> _tracer, glm::vec3 _intersect, int a);
-		//glm::vec3 Shadows(std::shared_ptr<Ray> _ray, glm::vec3 _intersect);
 
 private:
 		glm::vec3 m_pos;

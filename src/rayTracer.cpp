@@ -19,7 +19,6 @@ glm::vec3 RayTracer::Raytracer(std::shared_ptr<Ray> _ray, int a)
 								closestObject = m_objects.at(i);
 								intersectionPoint = result.intersectionPoint;
 						}
-						break;	//See if that works when deleted
 				}
 				else
 				{

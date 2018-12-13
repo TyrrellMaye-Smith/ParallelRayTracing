@@ -9,6 +9,9 @@
 #include "Sphere.h"
 #include "Geometry.h"
 
+class Sphere;
+class Geometry;
+
 class RayTracer
 {
 public:

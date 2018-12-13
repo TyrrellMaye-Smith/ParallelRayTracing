@@ -1,5 +1,6 @@
 #ifndef GOEMETRY_H
 #define GEOMETRY_H
+#pragma once
 
 #include <glm/glm.hpp>
 #include <memory>
