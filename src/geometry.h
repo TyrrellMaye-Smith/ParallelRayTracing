@@ -17,8 +17,8 @@ struct Intersection
 class Geometry
 {
 public:
-		glm::vec3 NearestPoint(std::shared_ptr<Ray> _ray, glm::vec3 _query);
 
 		Intersection Intersect(std::shared_ptr<Ray> _ray, glm::vec3 _centre, float _radius);
+
 };
 #endif // !GEOMETRY_H

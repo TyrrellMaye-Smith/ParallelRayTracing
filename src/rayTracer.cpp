@@ -7,6 +7,8 @@ glm::vec3 RayTracer::Raytracer(std::shared_ptr<Ray> _ray, int a)
 		float distanceToPoint = INFINITY;
 		glm::vec3 intersectionPoint;
 
+		m_geomerty = std::make_shared<Geometry>();
+
 		//#pragma omp parallel for
 		for (size_t i = 0; i < m_objects.size(); i++)
 		{

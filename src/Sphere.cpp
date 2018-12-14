@@ -3,9 +3,9 @@
 glm::vec3 Sphere::Shade(std::shared_ptr<Ray> _ray, RayTracer& _tracer, glm::vec3 _intersect, int a)
 {
 		glm::vec3 color = GetColor();
-		glm::vec3 lightDirection = { 1.0f, 1.0f, -1.0f };
+		glm::vec3 lightDirection = { -1.0f, -1.0f, -1.0f };
 		glm::vec3 lightColor = { 1.0f, 1.0f, 1.0f };
-		glm::vec3 pointLight = glm::vec3(100, 100, -100) - _intersect;
+		glm::vec3 pointLight = glm::vec3(100, 100, 100) - _intersect;
 
 		float specularInt = 1.0f;
 
@@ -31,7 +31,7 @@ glm::vec3 Sphere::Shade(std::shared_ptr<Ray> _ray, RayTracer& _tracer, glm::vec3
 
 		//Point light specular
 		glm::vec3 pointLightReflect = glm::reflect(-pointLight, surfaceNormal);
-		float pointLightSpecularColour = glm::pow(glm::max(glm::dot(view, glm::normalize(pointLightReflect)), 0.0f), 50);
+		float pointLightSpecularColour = glm::pow(glm::max(glm::dot(view, glm::normalize(pointLightReflect)), 0.0f), 30);
 		pointLightSpecularColour *= specularInt;
 
 		float dot = glm::dot(lightDirection, surfaceNormal);
